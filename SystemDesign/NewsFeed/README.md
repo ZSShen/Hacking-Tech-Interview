@@ -45,6 +45,26 @@ Assume the photo size is on average 1MB. Since we have 100M new photos generated
 </p>
 
 
+## API Design
+
+### POST /upload
+| Parameters       | Data type | Example |
+|------------------|-----------|---------|
+| api_key [in]     | string    |         |
+| user_id [in]     | int       |         |
+| description [in] | string    |         |
+| photo [in]       | blob      |         |
+
+### GET /newsfeed
+| Parameters              | Data type | Example |
+|-------------------------|-----------|---------|
+| api_key [in]            | string    |         |
+| user_id [in]            | int       |         |
+| last_timestamp [in]     | timestamp |         |
+| page_size [in]          | int       |         |
+| feed_array [out]        | [blob]    |         |
+
+
 ## Detailed Component Design
 
 ### NewsFeed Service
