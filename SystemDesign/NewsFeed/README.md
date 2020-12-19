@@ -1,5 +1,5 @@
 # Design NewsFeed
-This problem may be asked in various ways such as designing Facebook newsfeed, designing Instagram, or designing Twitter.  
+This problem may be asked in various ways such as designing Facebook newsfeed, designing Instagram, or designing Twitter.
 Here, I use Instagram as the example to illustrate my thinking steps.
 
 
@@ -18,7 +18,7 @@ Here, I use Instagram as the example to illustrate my thinking steps.
 ## Capacity Estimation
 
 ### Traffic
-Assume 1B daily active users with each user fetching his newsfeed on average 10 times a day. This implies 10B requests/day, 100K requests/second. Plus, let's assume a user posts photos every 10 days. Then this implies 100M new photos generated every day. 
+Assume 1B daily active users with each user fetching his newsfeed on average 10 times a day. This implies 10B requests/day, 100K requests/second. Plus, let's assume a user posts photos every 10 days. Then this implies 100M new photos generated every day.
 
 ### Storage
 Assume the photo size is on average 1MB. Since we have 100M new photos generated every day, this implies the daily data generation pace would be 100TB/day. If we plan to host the service for 5 years, then storage consumption would be 100TB * 5 *365 = 182.5PB.
@@ -68,7 +68,7 @@ Assume the photo size is on average 1MB. Since we have 100M new photos generated
 ## Detailed Component Design
 
 ### NewsFeed Service
-The main disadvantage of the **push model** is that if a user has many followers, it may take a lot of time to synchronize the new posts to the followers. To solve this celebrity issue, we can use the hybrid approach to offload the pressure of the newsfeed service. For a celebrity user, the system will not trigger the fan-out-on-write task, and instead, it simply writes the new posts to the post table. This way, the **`FeedItem`** store does not contain the feed items created by celebrity users. 
+The main disadvantage of the **push model** is that if a user has many followers, it may take a lot of time to synchronize the new posts to the followers. To solve this celebrity issue, we can use the hybrid approach to offload the pressure of the newsfeed service. For a celebrity user, the system will not trigger the fan-out-on-write task, and instead, it simply writes the new posts to the post table. This way, the `FeedItem` store does not contain the feed items created by celebrity users.
 
 Once a user accesses the newsfeed feature, the `NewsFeed` service will check if this user has celebrity followers and will launch the fan-out-on-read task to collect post items created by those celebrities if necessary. Plus, it queries the `FeedItem` store to get the top-ranked posts created by ordinary users and then merge all these posts together.
 
@@ -85,7 +85,7 @@ Once a user accesses the newsfeed feature, the `NewsFeed` service will check if 
 We can shard `PostItem`, `FeedItem`, and `User` tables using UserId as the sharding key. Moreover, we should apply consistent hash to avoid unbalanced load distribution.
 
 ### Cache
-For the database, we must turn on its caching mechanism. Plus, we should use a caching system like Memcached to serve the `Photo` storage. Furthermore, we deploy CDN to cache hot photos for fast access in different geolocations. 
+For the database, we must turn on its caching mechanism. Plus, we should use a caching system like Memcached to serve the `Photo` storage. Furthermore, we deploy CDN to cache hot photos for fast access in different geolocations.
 
 ### Fault Tolerance
 For each service, such as `PostService` and `NewsFeedService`, we launch multiple servers and prepare load balancers in front of them to evenly distribute the workload.
