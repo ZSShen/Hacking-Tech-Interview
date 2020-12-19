@@ -11,4 +11,4 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 759     | <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/759_Employee_Free_Time.cpp" target="_blank">Employee Free Time</a> | Count free intervals. The idea is similar to meeting rooms II. |
-
+| 1229    | <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1229_Meeting_Scheduler.cpp" target="_blank">Meeting Scheduler</a> | Two pointers. Check `max(s1, s2) < min(e1, e2)` |
