@@ -26,7 +26,7 @@ public:
                         c -> a -> b,  1 arrow (wrong)
 
             sorting based on endint point:
-              2 arrows (correct)
+                        a -> b -> c,  2 arrows (correct)
 
         */
 
