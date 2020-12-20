@@ -82,7 +82,7 @@ Once a user accesses the newsfeed feature, the `NewsFeed` service will check if 
 ## Scale-Out
 
 ### Database Sharding
-We can shard `PostItem`, `FeedItem`, and `User` tables using UserId as the sharding key. Moreover, we should apply consistent hash to avoid unbalanced load distribution.
+We can shard `PostItemDB`, `FeedItemDB`, and `UserDB` tables using `UserId` as the sharding key. Moreover, we should apply consistent hash to avoid unbalanced load distribution.
 
 ### Cache
 For the database, we must turn on its caching mechanism. Plus, we should use a caching system like Memcached to serve the `Photo` storage. Furthermore, we deploy CDN to cache hot photos for fast access in different geolocations.
