@@ -2,14 +2,17 @@ class Solution {
 public:
     int findMinArrowShots(vector<vector<int>>& points) {
 
-        /*
+        /**
+            TC: O(nlogn)
+            SC: O(1)
+
             [[10,16],[2,8],[1,6],[7,12]]
 
-                     ------------
+                     |----------|
 
-           --------
-               ----------
-                            --------
+           |-------|
+               |--------|
+                            |-------|
             -----------------------------
             1  2  6  7  8  10  12  16
 
@@ -18,9 +21,9 @@ public:
             The counter example for sorting based on starting point.
 
                 a        b
-              -----    -----
+             |-----|   |-----|
                      c
-            -------------------
+            |-------------------|
 
             sorting based on starting point:
                         c -> a -> b,  1 arrow (wrong)

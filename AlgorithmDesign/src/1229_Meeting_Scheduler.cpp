@@ -3,9 +3,12 @@ public:
     vector<int> minAvailableDuration(vector<vector<int>>& slots1, vector<vector<int>>& slots2, int duration) {
 
         /**
-               -------  -------   ------
+            TC: O(nlogn)
+            SC: O(n)
 
-            ------     -----
+               |-----|  |-----|   |----|
+
+            |-----|     |--|
 
             ------------------------------
             0 10 15 50 60 70 120 140 210

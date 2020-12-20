@@ -19,10 +19,13 @@ public:
     vector<Interval> employeeFreeTime(vector<vector<Interval>> schedule) {
 
         /**
-                      -------------
-                -----
+            TC: O(nlogn)
+            SC: O(n)
 
-                ---     ---
+                      |------------|
+                |---|
+
+                |-|     |-|
                 -------------------------
                 1 2 3 4 5 6 7 8 9 10
 

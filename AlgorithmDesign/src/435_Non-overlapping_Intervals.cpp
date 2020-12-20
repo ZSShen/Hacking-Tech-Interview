@@ -2,6 +2,9 @@ class Solution {
 public:
     int eraseOverlapIntervals(vector<vector<int>>& intervals) {
 
+        // TC: O(nlogn)
+        // SC: O(n)
+
         int n = intervals.size();
         if (n <= 1) {
             return 0;
