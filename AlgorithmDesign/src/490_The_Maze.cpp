@@ -38,7 +38,7 @@ public:
                     ny += d[1];
                 }
 
-                // Bounce back once hitting the wall.
+                // Bounce back once hitting a wall.
                 nx -= d[0];
                 ny -= d[1];
 
