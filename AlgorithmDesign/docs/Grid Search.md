@@ -4,6 +4,8 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 1340     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1254_Number_of_Closed_Islands.cpp" target="_blank">Number of Closed Islands</a>| DFS or BFS. DFS with more succinct code. |
+| 305     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/305_Number_of_Islands_II.cpp" target="_blank">Number of Islands II</a>| Fill with disjoint set and union find. |
+
 
 ## Path Search
 | Id      | Name                                        | Note               |
