@@ -2,6 +2,11 @@ class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
 
+        /**
+         * TC: O(n)
+         * SC: O(n)
+         */
+
         int n = nums.size();
         int nn = n << 1;
 

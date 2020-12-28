@@ -2,6 +2,11 @@ class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
 
+        /**
+         * TC: O(n)
+         * SC: O(n)
+         */
+
         unordered_map<int, int> map;
 
         // Maintain a monotonous decreasing stack.
