@@ -18,3 +18,4 @@
 | 490     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/490_The_Maze.cpp" target="_blank">The Maze</a>| BFS or DFS. |
 | 505     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/505_The_Maze_II.cpp" target="_blank">The Maze II</a>| BFS or DFS. Maintain a matrix to track the shortest path reaching each cell.|
 | 499   |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/499_The_Maze_III.cpp" target="_blank">The Maze III</a>| DFS. Similar to part II but need to track path configurations, so prefer DFS. |
+| 79   |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/79_Word_Search.cpp" target="_blank">Word Search</a>| DFS or BFS. DFS with more succinct code. Check character match at function prologue. |
