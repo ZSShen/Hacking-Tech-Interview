@@ -20,6 +20,11 @@
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Grid%20Search.md#optimal-path-search" target="_blank">Path Search</a>
 
 
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Graph%20Search.md" target="_blank">Graph Search</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md" target="_blank">Graph Problem Abstration</a>
+
+
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md" target="_blank">Stack</a>
 
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md#monotonous-stack" target="_blank">Monotonous Stack</a>
