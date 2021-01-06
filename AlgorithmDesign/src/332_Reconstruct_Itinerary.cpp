@@ -2,6 +2,14 @@ class Solution {
 public:
     vector<string> findItinerary(vector<vector<string>>& tickets) {
 
+        /**
+         * V: number of nodes
+         * E: number of edges
+         *
+         * TC: O(V + E + ElogE)
+         * SC: O(V + E)
+         */
+
         unordered_map<string, vector<pair<string, bool>>> graph;
         int n = tickets.size();
 
