@@ -13,3 +13,4 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 140     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/140_Word_Break_II.cpp" target="_blank">Word Break II</a>| Ａvoid re-visiting same subproblems with a memo cache. |
+| 291     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/291_Word_Pattern_II.cpp" target="_blank">Word Pattern II</a>|  |
