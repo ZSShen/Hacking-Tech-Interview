@@ -7,6 +7,9 @@ public:
          *
          *   right partition:
          *   right[i] = highest_selling - prices[i]
+         *
+         *   TC: O(n)
+         *   SC: O(n)
          */
 
         int n = prices.size();
