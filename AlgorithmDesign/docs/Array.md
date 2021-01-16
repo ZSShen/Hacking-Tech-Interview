@@ -13,3 +13,4 @@
 |---------|---------------------------------------------|--------------------|
 | 123     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/123_Best_Time_to_Buy_and_Sell_Stock_III.cpp" target="_blank">Best Time to Buy and Sell Stock III</a>| Use a rod to seperate two transactions. Also, keep the lowest buying price on the left and keep the highest selling price on the right. |
 | 1031     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1031_Maximum_Sum_of_Two_Non-Overlapping_Subarrays.cpp" target="_blank">Maximum Sum of Two Non-Overlapping Subarrays</a>| Use a rod to seperate subarrays with size L and M. |
+| 689     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/689_Maximum_Sum_of_3_Non-Overlapping_Subarrays.cpp" target="_blank">Maximum Sum of 3 Non-Overlapping Subarrays</a>| Use a block to seperate the input array to 3 partitions. |
