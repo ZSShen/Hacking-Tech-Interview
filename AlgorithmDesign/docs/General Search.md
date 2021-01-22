@@ -14,3 +14,9 @@
 |---------|---------------------------------------------|--------------------|
 | 140     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/140_Word_Break_II.cpp" target="_blank">Word Break II</a>| Ａvoid re-visiting same subproblems with a memo cache. |
 | 291     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/291_Word_Pattern_II.cpp" target="_blank">Word Pattern II</a>|  |
+
+
+## Topological Sort
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 269     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/269_Alien_Dictionary.cpp" target="_blank">Alien Dictionary</a>| Build a graph by examining pairs of words and then run the topological sort on the graph to figure out the legal character order. |
