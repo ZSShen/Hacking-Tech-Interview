@@ -32,3 +32,8 @@
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md" target="_blank">Stack</a>
 
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md#monotonous-stack" target="_blank">Monotonous Stack</a>
+
+
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md" target="_blank">Design</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md#data-structure-design" target="_blank">Data Structure Design</a>
