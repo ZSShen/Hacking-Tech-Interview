@@ -20,9 +20,13 @@
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Grid%20Search.md#optimal-path-search" target="_blank">Path Search</a>
 
 
-## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Graph%20Search.md" target="_blank">Graph Search</a>
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md" target="_blank">General Search</a>
 
-<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md" target="_blank">Graph Problem Abstration</a>
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md#graph-problem-abstraction" target="_blank">Graph Problem Abstration</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md#backtracking" target="_blank">Backtracking</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md#topological-sort" target="_blank">Topological Sort</a>
 
 
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md" target="_blank">Stack</a>
