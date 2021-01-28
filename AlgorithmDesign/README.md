@@ -36,9 +36,9 @@
 
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md" target="_blank">Tree</a>
 
-<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md#data-structure-design" target="_blank">Data Structure Design</a>
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md#serialization" target="_blank">Serialization</a>
 
 
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md" target="_blank">Design</a>
 
-<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md#serialization" target="_blank">Serialization</a>
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md#data-structure-design" target="_blank">Data Structure Design</a>
