@@ -39,10 +39,11 @@
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md#monotonous-stack" target="_blank">Monotonous Stack</a>
 
 
-## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Design.md" target="_blank">Tree</a>
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md" target="_blank">Tree</a>
 
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md#serialization" target="_blank">Serialization</a>
 
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md#common-ancestor" target="_blank">Common Ancestor</a>
 
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Tree.md" target="_blank">Design</a>
 
