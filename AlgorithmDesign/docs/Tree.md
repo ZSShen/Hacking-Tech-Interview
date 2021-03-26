@@ -6,7 +6,7 @@
 | 297     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/297_Serialize_and_Deserialize_Binary_Tree.cpp" target="_blank">Serialize and Deserialize Binary Tree</a>|  |
 
 
-# Common Ancestor
+## Common Ancestor
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 235     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree.cpp" target="_blank">Lowest Common Ancestor of a Binary Search Tree</a>|  |
