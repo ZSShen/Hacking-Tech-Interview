@@ -29,6 +29,11 @@
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/General%20Search.md#topological-sort" target="_blank">Topological Sort</a>
 
 
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Binary%20Search.md" target="_blank">Binary Search</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Binary%20Search.md#basic-binary-approximation" target="_blank">Basic Binary Approximation</a>
+
+
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md" target="_blank">Stack</a>
 
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md#monotonous-stack" target="_blank">Monotonous Stack</a>
