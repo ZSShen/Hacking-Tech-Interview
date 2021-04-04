@@ -2,6 +2,21 @@ class Solution {
 public:
     int maxSubArrayLen(vector<int>& nums, int k) {
 
+        /**
+         * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+         *
+         * TC: O(n)
+         * SC: O(n)
+         *
+         *   1  -1  5  -2  3
+         *   1   0  5   3  6
+         *
+         *  -2  -1  2   1
+         *  -2  -3  -1  0
+         *
+         *  HashTable(Key = Prefix Sum) = (Value = Index)
+         */
+
         unordered_map<int, int> map;
         map[0] = -1;
 

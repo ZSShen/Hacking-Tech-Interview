@@ -2,6 +2,13 @@ class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
 
+        /**
+         * https://leetcode.com/problems/continuous-subarray-sum/
+         *
+         * TC: O(n)
+         * SC: O(n)
+         */
+
         unordered_map<int, int> map;
         map[0] = -1;
 

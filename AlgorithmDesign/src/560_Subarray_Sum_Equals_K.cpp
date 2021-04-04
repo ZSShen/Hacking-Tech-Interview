@@ -3,8 +3,13 @@ public:
     int subarraySum(vector<int>& nums, int k) {
 
         /**
+         * https://leetcode.com/problems/subarray-sum-equals-k/
+         *
          * TC: O(n)
          * SC: O(n)
+         *
+         *  sum(i, j) = prefix(j) -  prefix(i - 1) = k
+         *      => prefix(i - 1) = prefix(j) - k
          */
 
         unordered_map<int, int> freq;
