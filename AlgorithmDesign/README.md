@@ -34,6 +34,13 @@
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Binary%20Search.md#basic-binary-approximation" target="_blank">Basic Binary Approximation</a>
 
 
+## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Array.md" target="_blank">Array</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Array.md#subarray-and-prefix-sum" target="_blank">Subarray and Prefix Sum</a>
+
+<a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Array.md#two-non-overlapping-subarrays" target="_blank">Two Non-Overlapping Subarrays</a>
+
+
 ## <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md" target="_blank">Stack</a>
 
 <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/docs/Stack.md#monotonous-stack" target="_blank">Monotonous Stack</a>
