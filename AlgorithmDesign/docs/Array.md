@@ -11,15 +11,16 @@
 | 1498    |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1498_Number_of_Subsequences_That_Satisfy_the_Given_Sum_Condition.cpp" target="_blank">Number of Subsequences That Satisfy the Given Sum Condition</a>| Two pointer and sandwitch scan. should handle integer overflow with pre-calculated power array. |
 | 53      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/53_Maximum_Subarray.cpp" target="_blank">Maximum Subarray</a>| Maintain a running sum. Cut it off and initiate a new one once the sum is negative. |
 | 152     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/152_Maximum_Product_Subarray.cpp" target="_blank">Maximum Product Subarray</a>| Maintain two running products, `min_sofar` and `max_sofar`. |
-
+| 238      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/238_Product_of_Array_Except_Self.cpp" target="_blank">Product of Array Except Self</a>| Maintain two running products `l_prod` and `r_prod`. Reuse the answer vector to achieve O(1) space complexity. |
 
 
 ## Sliding Window
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
-| 209     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/209_Minimum_Size_Subarray_Sum.cpp" target="_blank">Minimum Size Subarray Sum</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the smallest one.|
-| 713     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/713_Subarray_Product_Less_Than_K.cpp" target="_blank">Subarray Product Less Than K</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the smallest one.|
-| 76      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/76_Minimum_Window_Substring.cpp" target="_blank">Minimum Window Substring</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the smallest one.|
+| 209     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/209_Minimum_Size_Subarray_Sum.cpp" target="_blank">Minimum Size Subarray Sum</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the shortest one.|
+| 713     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/713_Subarray_Product_Less_Than_K.cpp" target="_blank">Subarray Product Less Than K</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the shortest one.|
+| 76      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/76_Minimum_Window_Substring.cpp" target="_blank">Minimum Window Substring</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the shortest one.|
+| 340     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/340_Longest_Substring_with_At_Most_K_Distinct_Characters.cpp" target="_blank">Longest Substring with At Most K Distinct Characters</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the longest one.|
 
 
 ## Two Non-Overlapping Subarrays
