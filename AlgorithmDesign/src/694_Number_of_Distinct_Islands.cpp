@@ -7,6 +7,8 @@ public:
     int numDistinctIslands(vector<vector<int>>& grid) {
 
         /**
+         * https://leetcode.com/problems/number-of-distinct-islands/
+         *
          * TC: O(m * n)
          * SC: O(m * n)
          */

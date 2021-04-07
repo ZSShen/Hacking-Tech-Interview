@@ -3,10 +3,13 @@
 ## Flood and Fill
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
-| 1254     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1254_Number_of_Closed_Islands.cpp" target="_blank">Number of Closed Islands</a>| DFS or BFS. DFS with more succinct code. |
+| 200     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/200_Number_of_Islands.cpp" target="_blank">Number of Islands</a>| DFS or BFS. DFS with more succinct code. |
 | 305     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/305_Number_of_Islands_II.cpp" target="_blank">Number of Islands II</a>| Fill with disjoint set and union find. |
-| 694     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/694_Number_of_Distinct_Islands.cpp" target="_blank">Number of Distinct Islands</a>| Encode islands. |
+| 1254     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1254_Number_of_Closed_Islands.cpp" target="_blank">Number of Closed Islands</a>| DFS or BFS. DFS with more succinct code. |
+| 130     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/130_Surrounded_Regions.cpp" target="_blank">Surrounded Regions</a>| DFS or BFS. DFS with more succinct code. |
+| 694     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/694_Number_of_Distinct_Islands.cpp" target="_blank">Number of Distinct Islands</a>| DFS or BFS. DFS with more succinct code. Encode islands. |
 | 827     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/827_Making_A_Large_Island.cpp" target="_blank">Making a Large Island</a>| Fill islands with different colors. |
+| 286     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/286_Walls_and_Gates.cpp" target="_blank">Walls and Gates</a>| Level-Order BFS. Start from gates and fill empty rooms. |
 
 
 ## Path Search
