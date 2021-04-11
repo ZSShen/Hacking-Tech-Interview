@@ -18,7 +18,7 @@
 | 47     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/47_Permutations_II.cpp" target="_blank">Permutations II</a>| Deduplication with `i > bgn && cands[i] == cands[i - 1] && !visit[i - 1]`. |
 | 39     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/39_Combination_Sum.cpp" target="_blank">Combination Sum</a>|  |
 | 40     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/40_Combination_Sum_II.cpp" target="_blank">Combination Sum II</a>| Deduplication with `i > bgn && cands[i] == cands[i - 1]`. |
-| 140     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/140_Word_Break_II.cpp" target="_blank">Word Break II</a>| Ａvoid re-visiting same subproblems with a memo cache. |
+| 140     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/140_Word_Break_II.cpp" target="_blank">Word Break II</a>| Avoid re-visiting same subproblems with a memo cache. |
 | 291     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/291_Word_Pattern_II.cpp" target="_blank">Word Pattern II</a>|  |
 
 

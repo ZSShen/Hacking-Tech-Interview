@@ -23,6 +23,15 @@
 | 340     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/340_Longest_Substring_with_At_Most_K_Distinct_Characters.cpp" target="_blank">Longest Substring with At Most K Distinct Characters</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the longest one.|
 
 
+## Sandwitch (Reversed Two Pointers)
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 15     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/15_3Sum.cpp" target="_blank">3Sum</a>| Use two pointers, `L` and `R`, to locate legal triplets. Be sure to dedulicate using `while (++l < r && nums[l] == nums[l - 1])` and `while (l < --r && nums[r] == nums[r + 1])`.|
+| 18     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/18_4Sum.cpp" target="_blank">4Sum</a>| Same as 3Sum, but need to define a 2-layer driver loop outside of the 2Sum subroutine. |
+| 16     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/16_3Sum_Closest.cpp" target="_blank">3Sum Closest</a>| Use two pointers, `L` and `R`, to locate legal triplets.|
+| 259     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/259_3Sum_Smaller.cpp" target="_blank">3Sum Smaller</a>| Use two pointers, `L` and `R`, to locate legal triplets.|
+
+
 ## Two Non-Overlapping Subarrays
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
