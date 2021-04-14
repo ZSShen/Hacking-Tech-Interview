@@ -10,6 +10,7 @@
 | 694     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/694_Number_of_Distinct_Islands.cpp" target="_blank">Number of Distinct Islands</a>| DFS or BFS. DFS with more succinct code. Encode islands. |
 | 827     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/827_Making_A_Large_Island.cpp" target="_blank">Making a Large Island</a>| Fill islands with different colors. |
 | 286     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/286_Walls_and_Gates.cpp" target="_blank">Walls and Gates</a>| Level-Order BFS. Start from gates and fill empty rooms. |
+| 463     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/463_Island_Perimeter.cpp" target="_blank">Island Perimeter</a>| Traverse the grid cells with a two-layer loop. Per each cell, check if it has neighbors having value 0. |
 
 
 ## Path Search

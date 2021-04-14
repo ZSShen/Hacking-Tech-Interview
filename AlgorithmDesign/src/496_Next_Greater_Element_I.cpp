@@ -3,8 +3,10 @@ public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
 
         /**
-         * TC: O(n)
-         * SC: O(n)
+         * https://leetcode.com/problems/next-greater-element-i/
+         *
+         * TC: O(N)
+         * SC: O(N)
          */
 
         unordered_map<int, int> map;

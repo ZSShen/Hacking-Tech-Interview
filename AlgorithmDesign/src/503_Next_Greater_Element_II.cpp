@@ -3,8 +3,10 @@ public:
     vector<int> nextGreaterElements(vector<int>& nums) {
 
         /**
-         * TC: O(n)
-         * SC: O(n)
+         * https://leetcode.com/problems/next-greater-element-ii/
+         *
+         * TC: O(N)
+         * SC: O(N)
          */
 
         int n = nums.size();
