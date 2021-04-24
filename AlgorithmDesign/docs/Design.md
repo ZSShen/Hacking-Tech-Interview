@@ -12,3 +12,10 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 173     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/173_Binary_Search_Tree_Iterator.cpp" target="_blank">Binary Search Tree Iterator</a>| Iterative inorder traversal. Always check left offsprings and then check right ones. |
+
+
+## Data Structure Conversion
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 114     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/114_Flatten_Binary_Tree_to_Linked_List.cpp" target="_blank">Flatten Binary Tree to Linked List</a>|  |
+| 430     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/430_Flatten_a_Multilevel_Doubly_Linked_List.cpp" target="_blank">Flatten a Multilevel Doubly Linked List</a>|  |
