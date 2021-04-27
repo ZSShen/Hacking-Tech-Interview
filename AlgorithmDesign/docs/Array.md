@@ -38,3 +38,10 @@
 | 123     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/123_Best_Time_to_Buy_and_Sell_Stock_III.cpp" target="_blank">Best Time to Buy and Sell Stock III</a>| Use a rod to seperate two transactions. Also, keep the lowest buying price on the left and keep the highest selling price on the right. |
 | 1031    |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1031_Maximum_Sum_of_Two_Non-Overlapping_Subarrays.cpp" target="_blank">Maximum Sum of Two Non-Overlapping Subarrays</a>| Use a rod to seperate subarrays with size L and M. |
 | 689     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/689_Maximum_Sum_of_3_Non-Overlapping_Subarrays.cpp" target="_blank">Maximum Sum of 3 Non-Overlapping Subarrays</a>| Use a block to seperate the input array to 3 partitions. |
+
+
+## Element Partition
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 283     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/283_Move_Zeroes.cpp" target="_blank">Move Zeroes</a>| Use two pointers `L` and `R`. Once seeing a non-zero element, increase `L` and swap it with the element pointed by `L`. |
+| 75     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/75_Sort_Colors.cpp" target="_blank">Sort Colors</a>| Use three pointers `0`, `1`, and `2`. When swapping a 2 to the right end and acquiring an unknown element, do not advance `1` but postpone to the next iteration to make decision. |
