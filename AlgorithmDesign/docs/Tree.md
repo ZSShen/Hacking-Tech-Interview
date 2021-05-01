@@ -19,7 +19,17 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 98     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/98_Validate_Binary_Search_Tree.cpp" target="_blank">Validate Binary Search Tree</a>| Apply pre-order traversal with lower and upper bounds. |
+| 958     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/958_Check_Completeness_of_a_Binary_Tree.cpp" target="_blank">Check Completeness of a Binary Tree</a>|  |
 | 993     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/993_Cousins_in_Binary_Tree.cpp" target="_blank">Cousins in Binary Tree</a>|  |
+| 1522     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1522_Diameter_of_N-Ary_Tree.cpp" target="_blank">Diameter of N-Ary Tree</a>|  |
+
+
+## Path Applications
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 129     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/129_Sum_Root_to_Leaf_Numbers.cpp" target="_blank">Sum Root to Leaf Numbers</a>| Run pre-order traversal with prefix sum. |
+| 124     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/124_Binary_Tree_Maximum_Path_Sum.cpp" target="_blank">Binary Tree Maximum Path Sum</a>| Post-order traversal. |
+
 
 
 ## Traversal
