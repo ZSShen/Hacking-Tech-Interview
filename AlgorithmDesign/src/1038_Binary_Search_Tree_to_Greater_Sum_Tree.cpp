@@ -1,0 +1,41 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* bstToGst(TreeNode* root) {
+
+        /**
+         * https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+         *
+         * TC: O(N)
+         * SC: O(H)
+         */
+
+        int sum = 0;
+        runReverseInOrder(root, sum);
+        return root;
+    }
+
+private:
+    void runReverseInOrder(TreeNode* root, int& sum) {
+
+        if (!root) {
+            return;
+        }
+
+        runReverseInOrder(root->right, sum);
+        root->val += sum;
+        sum = root->val;
+        runReverseInOrder(root->left, sum);
+        return;
+    }
+};

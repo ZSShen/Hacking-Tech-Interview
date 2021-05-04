@@ -19,13 +19,21 @@
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 98     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/98_Validate_Binary_Search_Tree.cpp" target="_blank">Validate Binary Search Tree</a>| Apply pre-order traversal with lower and upper bounds. |
+| 101     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/101_Symmetric_Tree.cpp" target="_blank">Symmetric Tree</a>| Check `L->L == R->R` and `L->R == R->L`. |
 | 958     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/958_Check_Completeness_of_a_Binary_Tree.cpp" target="_blank">Check Completeness of a Binary Tree</a>|  |
+| 572     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/572_Subtree_of_Another_Tree.cpp" target="_blank">Subtree of Another Tree</a>| Run a two-layer pre-order traversal. |
 | 993     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/993_Cousins_in_Binary_Tree.cpp" target="_blank">Cousins in Binary Tree</a>|  |
 | 1522     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1522_Diameter_of_N-Ary_Tree.cpp" target="_blank">Diameter of N-Ary Tree</a>|  |
-| 536     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/536_Construct_Binary_Tree_from_String.cpp" target="_blank">Construct Binary Tree from String</a>| Pre-order traversal |
 | 863     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/863_All_Nodes_Distance_K_in_Binary_Tree.cpp" target="_blank">All Nodes Distance K in Binary Tree</a>| Convert the tree into an undirected graph, or annotate the tree with additional parent pointers. |
 | 1361     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1361_Validate_Binary_Tree_Nodes.cpp" target="_blank">Validate Binary Tree Nodes</a>| Check tree properties: E = V - 1, Single root, no cycle. |
 | 333     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/333_Largest_BST_Subtree.cpp" target="_blank">Largest BST Subtree</a>| Post-order traversal. |
+
+
+## Structure Conversion
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 536     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/536_Construct_Binary_Tree_from_String.cpp" target="_blank">Construct Binary Tree from String</a>| Pre-order traversal |
+| 1038     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1038_Binary_Search_Tree_to_Greater_Sum_Tree.cpp" target="_blank">Binary Search Tree to Greater Sum Tree</a>| Reversed In-order traversal |
 
 
 ## Path Applications
@@ -35,7 +43,7 @@
 | 124     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/124_Binary_Tree_Maximum_Path_Sum.cpp" target="_blank">Binary Tree Maximum Path Sum</a>| Post-order traversal. |
 
 
-## Traversal
+## Customized Traversal
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
 | 111     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/111_Minimum_Depth_of_Binary_Tree.cpp" target="_blank">Minimum Depth of Binary Tree</a>|  |
