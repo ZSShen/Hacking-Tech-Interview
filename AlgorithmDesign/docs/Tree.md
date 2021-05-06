@@ -24,9 +24,9 @@
 | 572     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/572_Subtree_of_Another_Tree.cpp" target="_blank">Subtree of Another Tree</a>| Run a two-layer pre-order traversal. |
 | 993     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/993_Cousins_in_Binary_Tree.cpp" target="_blank">Cousins in Binary Tree</a>|  |
 | 1522     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1522_Diameter_of_N-Ary_Tree.cpp" target="_blank">Diameter of N-Ary Tree</a>|  |
-| 863     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/863_All_Nodes_Distance_K_in_Binary_Tree.cpp" target="_blank">All Nodes Distance K in Binary Tree</a>| Convert the tree into an undirected graph, or annotate the tree with additional parent pointers. |
 | 1361     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1361_Validate_Binary_Tree_Nodes.cpp" target="_blank">Validate Binary Tree Nodes</a>| Check tree properties: E = V - 1, Single root, no cycle. |
 | 333     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/333_Largest_BST_Subtree.cpp" target="_blank">Largest BST Subtree</a>| Post-order traversal. |
+| 865     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/865_Smallest_Subtree_with_all_the_Deepest_Nodes.cpp" target="_blank">Smallest Subtree with all the Deepest Nodes</a>| Post-order traversal. |
 
 
 ## Structure Conversion
@@ -34,6 +34,9 @@
 |---------|---------------------------------------------|--------------------|
 | 536     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/536_Construct_Binary_Tree_from_String.cpp" target="_blank">Construct Binary Tree from String</a>| Pre-order traversal |
 | 1038     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1038_Binary_Search_Tree_to_Greater_Sum_Tree.cpp" target="_blank">Binary Search Tree to Greater Sum Tree</a>| Reversed In-order traversal |
+| 617     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/617_Merge_Two_Binary_Trees.cpp" target="_blank">Merge Two Binary Trees</a>|  |
+| 742     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/742_Closest_Leaf_in_a_Binary_Tree.cpp" target="_blank">Closest Leaf in a Binary Tree</a>| Convert the tree into an undirected graph, or annotate the tree with additional parent pointers. |
+| 863     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/863_All_Nodes_Distance_K_in_Binary_Tree.cpp" target="_blank">All Nodes Distance K in Binary Tree</a>| Convert the tree into an undirected graph, or annotate the tree with additional parent pointers. |
 
 
 ## Path Applications
