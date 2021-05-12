@@ -3,11 +3,13 @@ public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
 
         /**
-         *  n: The number of words.
-         *  l: The averaged length of a word.
+         * https://leetcode.com/problems/word-ladder/
          *
-         *  TC: O(n * (26 ^ l))
-         *  SC: O(n * l)
+         *  N: The number of dictionary words.
+         *  L: The averaged length of a word.
+         *
+         *  TC: O(N * (26 ^ L))
+         *  SC: O(N * L)
          */
 
         unordered_set<string> dict(wordList.begin(), wordList.end());
