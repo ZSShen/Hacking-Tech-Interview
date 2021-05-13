@@ -39,6 +39,14 @@ The response status code 301 means permanent redirection, and the browser will c
 Whether we should use 301 or 302 depends on the business requirements. If we plan to reduce the workload of TinyURL, we can choose 301. On the contrary, if we emphasize analytics, we should use 302 since it helps track the pattern of requests.
 
 # High Level System Design
+Now, it is time to have an architectural overview. 
+
+As shown in the picture, the first component is WebServer, which serves as a gateway or proxy to distribute requests to internal services including ID Generation Service and URL Service. Second, ID Generation Service is responsible for generating a short ID for a long URL. Depending on different implementation details, the service may need to integrate another data store to ensure that each short ID is unique. Third, we have URL Service that inserts the long URL and short ID mappings into URL Database and fetches the long URLs using the specified short IDs.
+
+For the write path, a POST request first goes through WebServer, which then requests ID Generation Service using the long URL to create a unique short ID. Once obtaining the short ID, WebServer then requests URL Service to store the long URL and short ID mapping.
+
+For the read path, a GET request first goes through WebServer, which then requests URL Service to fetch the long URL using the short ID. Once acquiring the short ID, WebServer responds to the client with the long URL specified in the location header and the status code either 301 or 302.
+
 <p align="center">
   <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/HighLevelSystemDesign.jpg"/>
 </p>
