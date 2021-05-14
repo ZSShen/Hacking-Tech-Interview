@@ -6,6 +6,13 @@ public:
 
     bool exist(vector<vector<char>>& grid, string word) {
 
+        /**
+         * https://leetcode.com/problems/word-search/
+         *
+         *  TC: O(M * N * (3^L))
+         *  SC: O(L)
+         */
+
         int m = grid.size();
         int n = grid[0].size();
         int l = word.length();

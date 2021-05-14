@@ -12,6 +12,16 @@ public:
 
     vector<string> findWords(vector<vector<char>>& grid, vector<string>& words) {
 
+        /**
+         * https://leetcode.com/problems/word-search-ii/
+         *
+         * TC: O(M * N * (3^L))
+         * SC: O(L + C)
+         *
+         *  C: The space usage of the trie, which is proportional to the # of
+         *     characters of the word vector
+         */
+
         int m = grid.size();
         int n = grid[0].size();
 
