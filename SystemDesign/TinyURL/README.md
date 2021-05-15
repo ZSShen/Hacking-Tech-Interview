@@ -41,12 +41,25 @@ Whether we should use 301 or 302 depends on the business requirements. If we pla
 # High Level System Design
 Now, it is time to have an architectural overview. 
 
-As shown in the picture, the first component is WebServer, which serves as a gateway or proxy to distribute requests to internal services including ID Generation Service and URL Service. Second, ID Generation Service is responsible for generating a short ID for a long URL. Depending on different implementation details, the service may need to integrate another data store to ensure that each short ID is unique. Third, we have URL Service that inserts the long URL and short ID mappings into URL Database and fetches the long URLs using the specified short IDs.
+As shown in the picture, the first component is **WebServer**, which serves as a gateway or proxy to distribute requests to internal services including **ID Generation Service** and **URL Service**. Second, ID Generation Service is responsible for generating a short ID for a long URL. Depending on different implementation details, the service may need to integrate another data store to ensure that each short ID is unique. Third, we have URL Service that inserts the long URL and short ID pairs into URL Database and fetches the long URLs using the specified short IDs.
 
-For the write path, a POST request first goes through WebServer, which then requests ID Generation Service using the long URL to create a unique short ID. Once obtaining the short ID, WebServer then requests URL Service to store the long URL and short ID mapping.
+For the write path, a POST request first goes through WebServer, which then requests ID Generation Service using the long URL to create a unique short ID. Once obtaining the short ID, WebServer then requests URL Service to store the long URL and short ID pair.
 
 For the read path, a GET request first goes through WebServer, which then requests URL Service to fetch the long URL using the short ID. Once acquiring the short ID, WebServer responds to the client with the long URL specified in the location header and the status code either 301 or 302.
 
 <p align="center">
   <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/HighLevelSystemDesign.jpg"/>
 </p>
+
+# Database Schema
+So far, we have talked about the mappings of long URLs and short IDs. The next question is: how do we store these pairs? We probably need a database since a simple data structure like a hash table is not feasible to serve this volume of traffic. Yet, what is our data model?
+
+As a start, we can choose relational databases, such as MySQL or PostgreSQL as they are relatively mature and widely-used technology. In this application, we use PostgreSQL to build a database that maintains two tables: **User** and **URLMap**.
+
+The first table, User, stores users' account information including name, email, encrypted password, and account creation date. In the second table, URLMap, each row stores the short ID and long URL mapping, its creation dates, and who creates the mapping, which is associated with User table using the foreign key. Additionally, to enhance search performance, we build two indexes on the columns, `short_id`, and `long_url`. 
+
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/DatabaseShema.jpg"/>
+</p>
+
+
