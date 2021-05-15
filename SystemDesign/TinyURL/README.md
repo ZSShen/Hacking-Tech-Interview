@@ -62,4 +62,32 @@ The first table, User, stores users' account information including name, email, 
   <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/DatabaseShema.jpg"/>
 </p>
 
+# Design Details
+## Length of Short IDs
+The first detail we should discuss is the length of a short ID. Let's recap the design requirements. First, we plan to run the service for 10 years and we have 10M new tiny URLs generated daily, thus indicating that we will generate 36.5B URLs in 10 years. Second, we use numbers (0-9) and letters (a-z, A-Z), a total of 62 combinations, to encode IDs. Combining these two requirements, if we use the so-called Base62 to generate IDs, the IDs must be at least 6-characters long because 62^6 is around 56.8B, which is greater than 36.5B, and cover the total number of URLs.
 
+## ID Generation Service
+Next, we should deep dive into how we create the short IDs. 
+
+### Hash and Conflict Resolution
+The idea of the first approach is to hash a given long URL into a Base62-encoded string with 6 characters. It is comprised of 5 steps.
+1. First, append the long URL with a random seed.
+2. Second, feed this extended string into hash functions like MD5 or SHA1 to generate a hash value.
+3. Third, encode the hash value using Base62.
+4. Forth, randomly extract a 6-characters-long substring from the encoded string generated above as the ID.
+5. Finally, check if the ID already exists or not. If the answer is yes, we need to loop back to the first step. Otherwise, we store the ID and return it.  
+
+To efficiently test whether an ID already exists, BloomFilter is an ideal choice.
+In general, the drawback of this approach is that it takes longer to resolve conflicts and generate new and unique IDs as we have stored more and more IDs.
+
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/Approach_1.jpg" width="350"/>
+</p>
+
+### Counter and Ticket Pulling
+The idea of the second approach is to simulate the behavior of a ticket machine. In this approach, we maintain a global counter and an array of ID generators. These ID generators take turns to draw an ID from the counter, and the counter accumulates itself after serving a ticket drawing request. Once acquiring an ID, a generator encodes the ID using Base62 and returns it.
+
+Note that we can apply the auto-increment field of the SQL database to implement the counter so that we can maintain atomic transactions for ID pulling requests. The benefit of this approach is that we do not need to resolve ID conflicts, but the downside is that the global counter is our performance bottleneck and may suffer from single-point-of-failure.
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/Approach_2.jpg" width="800"/>
+</p>
