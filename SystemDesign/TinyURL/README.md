@@ -107,3 +107,26 @@ The idea of Snowflake ID is range partition, meaning each ID generator only prod
 <p align="center">
   <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach4.jpg" width="800"/>
 </p>
+
+# Scaling Out
+So far, we've discussed the design details, especially for short ID generations. For now, we should switch to the other important topic – scaling out the system. As mentioned above, we have 100 WPS and 10K RPS, but how do we serve request burst in peak hours? Moreover, we have 36.5B URL pairs. For the sake of RDB performance, it is not appropriate to put all these pairs into a single database instance, not to mention backing up data across multiple machines for failover. As a result, we will discuss database sharding, machine failover, and caching in this section.
+
+## Database Sharding
+Instead of launching a single database instance to maintain User and URLMap tables, we will create a cluster of machines to serve these tables. Here, we focus on URLMap sharding.
+
+The idea of URLMap sharding is that we create the tables with the same schema on multiple database instances, and each instance handles only a subset of the full URL pairs. For example, the first instance handles the pairs containing short IDs with prefix a, while the second instance serves short IDs with prefix b. In real-world applications, there are many ways to determine sharding keys. In our scenario, to serve read requests, we frequently use short IDs to fetch long URLs. Therefore, we apply `short_id` as our sharding key and should further discuss different sharding approaches.
+
+### Range Based Sharding
+The intuition is to distribute a URL pair to a corresponding shard using the first letter of `short_id`. However, this potentially leads to unbalanced partitions since some prefixes may be hot while the others are not.
+
+### Hash Key Based Sharding with Modulo
+Another idea is that we calculate a hash value for the given short_id and map it to the corresponding shard using modulo operation with the total number of shards as the divisor, or simply put `hash mod (# of shards)`. Nevertheless, this approach works only for a fixed number of shards. If we plan to add more new machines, we need to migrate a significant amount of data stored in the existing shards to the new ones. 
+
+### Hash Key Based Sharding with Consistent Hash
+Data migration is unavoidable when we add new machines or handle failover. Yet, we can leverage a technique called consistent hash to mitigate the issue. The main idea is to use a hash function to randomly map both the URL pairs and the database servers to a unit circle. Each pair is then assigned to the next server that appears on the circle in clockwise order. This provides an even distribution of URL pairs to servers. More importantly, if we add a new server, it is automatically added to the unit circle, and only the pairs mapped to the existing server next to the new one in the clockwise order should be reassigned. Similarly, if a server is down and is removed from the circle, only the pairs that were mapped to the failed server need to be reassigned to the next server. In brief, when a server is added or removed, the vast majority of the URL pairs maintain their prior shard assignments.
+
+
+## Caching
+
+
+
