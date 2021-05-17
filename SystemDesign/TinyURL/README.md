@@ -88,6 +88,7 @@ In general, the drawback of this approach is that it takes longer to resolve con
 The idea of the second approach is to simulate the behavior of a ticket machine. In this approach, we maintain a global counter and an array of ID generators. These ID generators take turns to draw an ID from the counter, and the counter accumulates itself after serving a ticket drawing request. Once acquiring an ID, a generator encodes the ID using Base62 and returns it.
 
 Note that we can apply the auto-increment field of the SQL database to implement the counter so that we can maintain atomic transactions for ID pulling requests. The benefit of this approach is that we do not need to resolve ID conflicts, but the downside is that the global counter is our performance bottleneck and may suffer from single-point-of-failure. Besides, if we generate 64-bits integer IDs, the encoded strings will have more than 6 bytes.
+
 <p align="center">
   <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach2.jpg" width="800"/>
 </p>
@@ -104,8 +105,9 @@ Like the previous approach, we need to encode the integer IDs using Base62.
 
 ### Range Partition
 The idea of Snowflake ID is range partition, meaning each ID generator only produces IDs within a predefined range, for example, timestamp or machine IDs. By extending this idea, we come up with the fourth approach. This time, the service coordinator partitions the value space of the total amount of numeric IDs into multiple ranges. Plus, the ID generators take turns to pull unused ranges from the coordinator. Also, each generator only consumes IDs within the pulled range and should pull another range once the old one runs out. Take our case as an example, we can partition 36.5B into 365K ranges, each of which contains 10M IDs.
+
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach4.jpg" width="800"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach4.jpg" width="750"/>
 </p>
 
 # Scaling Out
@@ -116,6 +118,10 @@ Instead of launching a single database instance to maintain User and URLMap tabl
 
 The idea of URLMap sharding is that we create the tables with the same schema on multiple database instances, and each instance handles only a subset of the full URL pairs. For example, the first instance handles the pairs containing short IDs with prefix a, while the second instance serves short IDs with prefix b. In real-world applications, there are many ways to determine sharding keys. In our scenario, to serve read requests, we frequently use short IDs to fetch long URLs. Therefore, we apply `short_id` as our sharding key and should further discuss different sharding approaches.
 
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/DatabaseSharding.jpg" width="750"/>
+</p>
+
 ### Range Based Sharding
 The intuition is to distribute a URL pair to a corresponding shard using the first letter of `short_id`. However, this potentially leads to unbalanced partitions since some prefixes may be hot while the others are not.
 
@@ -124,6 +130,18 @@ Another idea is that we calculate a hash value for the given short_id and map it
 
 ### Hash Key Based Sharding with Consistent Hash
 Data migration is unavoidable when we add new machines or handle failover. Yet, we can leverage a technique called consistent hash to mitigate the issue. The main idea is to use a hash function to randomly map both the URL pairs and the database servers to a unit circle. Each pair is then assigned to the next server that appears on the circle in clockwise order. This provides an even distribution of URL pairs to servers. More importantly, if we add a new server, it is automatically added to the unit circle, and only the pairs mapped to the existing server next to the new one in the clockwise order should be reassigned. Similarly, if a server is down and is removed from the circle, only the pairs that were mapped to the failed server need to be reassigned to the next server. In brief, when a server is added or removed, the vast majority of the URL pairs maintain their prior shard assignments.
+
+
+## Database Replication, Backup, and Failover
+For now, we only set up a single instance for each database shard, which is not reliable as machines may go down due to unexpected errors, thus causing data loss. To mitigate this issue, we should turn on the database backup and recovery mechanism.
+
+As a baseline approach, we can set up a leader, a follower, and a backup store like S3 for each shard. In the production environment, we only read and write to the leader, and the new records we write are replicated to the follower. Moreover, the follower regularly dumps the data into the backup store. 
+
+In this approach, we also need to set up another coordinator, e.g. ZooKeeper, to monitor the health of these machines. When a leader dies, the coordinator should promote the follower to become a new leader. Meanwhile, it should notify us to bring up a new follower, either automatic or manual way, by using the data stored in our backup. 
+
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/ReplicationBackupFailover.jpg" width="450"/>
+</p>
 
 
 ## Caching
