@@ -145,6 +145,24 @@ In this approach, we also need to set up another coordinator, e.g. ZooKeeper, to
 
 
 ## Caching
+To serve the high QPS and the potential request burst in peak hours, we should use cache to speed up URL Service and ID Generation Service.
+
+For `GET /<short_id>`, we can cache the frequently requested short IDs for URL service, thus reducing database access.
+
+For `POST /shorten`, depending on different ID generation methods, we can decouple ID generation and retrieval for ID Generation Service. For example, we can implement a producer that keeps generating unique IDs in the background and a consumer that draws IDs from the pool and returns it immediately.  
 
 
+## Load Balancing
+Following up with the caching mechanism, we should run multiple instances for WebServer, URL Service, and ID Generation Service to further boost our QPS. For this, we need to deploy a load balancer in front of each service group to evenly distribute requests and maintain service availability.
 
+
+## Final System Design
+Put all the details we discuss above, now we have this final draft.
+
+<p align="center">
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/FinalSystemDesign.jpg"/>
+</p>
+
+
+# Contact
+Please feel free to contact me via my mail andy.zsshen@gmail.com or my LinkedIn if you have any issue with this draft.
