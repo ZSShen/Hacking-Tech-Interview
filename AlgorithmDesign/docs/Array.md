@@ -21,6 +21,7 @@
 | 713     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/713_Subarray_Product_Less_Than_K.cpp" target="_blank">Subarray Product Less Than K</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the shortest one.|
 | 76      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/76_Minimum_Window_Substring.cpp" target="_blank">Minimum Window Substring</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the shortest one.|
 | 340     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/340_Longest_Substring_with_At_Most_K_Distinct_Characters.cpp" target="_blank">Longest Substring with At Most K Distinct Characters</a>| Use two pointers, `L` and `R`, to locate legitimate subarrays. Among them, pick the longest one.|
+| 1004      |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/1004_Max_Consecutive_Ones_III.cpp" target="_blank">Max Consecutive Ones III</a>| Find all the subarrays fulfilling `(j - i + 1) - ARR_SUM(i, j) <= K`.|
 
 
 ## Sandwitch (Reversed Two Pointers)

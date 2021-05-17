@@ -1,5 +1,12 @@
 # Binary Search
 
+
+## Basic Binary Search (Sandwitch Approach)
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 33     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/33_Search_in_Rotated_Sorted_Array.cpp" target="_blank">Search in Rotated Sorted Array</a>|  |
+
+
 ## Basic Binary Approximation
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
