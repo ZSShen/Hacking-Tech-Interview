@@ -19,59 +19,49 @@ public:
     vector<Interval> employeeFreeTime(vector<vector<Interval>> schedule) {
 
         /**
-            TC: O(nlogn)
-            SC: O(n)
+         * https://leetcode.com/problems/employee-free-time/
+         *
+         * TC: O(NlogN)
+         * SC: O(N)
+         *
+         *                |------------|
+         *          |---|
+         *          |-|     |-|
+         *          -----------------------
+         *          1 2 3 4 5 6 7 8 9 10
+         *
+         * count: 0 2 1 0 1 2 1 1 1 1 1
+         *              | |
+         *              |_| a free slot shared by everyone
+         *
+         */
 
-                      |------------|
-                |---|
+        vector<pair<int, char>> events;
 
-                |-|     |-|
-                -------------------------
-                1 2 3 4 5 6 7 8 9 10
-
-         cnt: 0 2 1 0 1 2 1 1 1 1 1
-                    | |
-                    |_|
-                    free slot.
-
-        */
-
-        using Point = pair<int, char>;
-        vector<Point> points;
-
-        for (const auto& s : schedule) {
-            for (const auto& interval : s) {
-                points.push_back({interval.start, BGN});
-                points.push_back({interval.end, END});
+        for (const auto& person : schedule) {
+            for (const auto& period : person) {
+                events.push_back({period.start, BGN});
+                events.push_back({period.end, END});
             }
         }
-
-        sort(points.begin(), points.end(),
-            [] (const auto& l, const auto& r) {
-                if (l.first == r.first) {
-                    return l.second < r.second;
-                }
-                return l.first < r.first;
-            }
-        );
+        sort(events.begin(), events.end());
 
         vector<Interval> ans;
-        int b = -1;
-        int count = 0;
+        int count = 0, bgn = -1;
 
-        for (const auto& p : points) {
-            if (p.second == BGN) {
+        for (const auto& event : events) {
+            if (event.second == BGN) {
                 ++count;
-                // Reach the ending point of a shared free slot.
-                if (count == 1 && b != -1 && p.first > b) {
-                    ans.push_back({b, p.first});
-                    b = -1;
+                // Reach the end of a shared free slot.
+                if (count == 1 && bgn != -1 && event.first > bgn) {
+                    ans.emplace_back(bgn, event.first);
+                    bgn = -1;
                 }
             } else {
                 --count;
-                // Reach the beginning point of a shared free slot.
+                // Reach the start of a shared free slot.
                 if (count == 0) {
-                    b = p.first;
+                    bgn = event.first;
                 }
             }
         }

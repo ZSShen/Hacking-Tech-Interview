@@ -1,5 +1,17 @@
 # Dynamic Programming
 
+## Fibonacci Sequence
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 91     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/91_Decode_Ways.cpp" target="_blank">Decode Ways</a>|  |
+
+
+## Knapsack problem
+| Id      | Name                                        | Note               |
+|---------|---------------------------------------------|--------------------|
+| 322     |  <a href="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/AlgorithmDesign/src/322_Coin_Change.cpp" target="_blank">Coin Change</a>|  |
+
+
 ## Recursion and Memoization
 | Id      | Name                                        | Note               |
 |---------|---------------------------------------------|--------------------|
