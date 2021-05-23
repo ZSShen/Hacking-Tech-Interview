@@ -48,7 +48,7 @@ For the write path, a POST request first goes through WebServer, which then requ
 For the read path, a GET request first goes through WebServer, which then requests URL Service to fetch the long URL using the short ID. Once acquiring the short ID, WebServer responds to the client with the long URL specified in the location header and the status code either 301 or 302.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/HighLevelSystemDesign.jpg" size=850/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/HighLevelSystemDesign.jpg" size=850/>
 </p>
 
 # Database Schema
@@ -59,7 +59,7 @@ As a start, we can choose relational databases, such as MySQL or PostgreSQL as t
 The first table, User, stores users' account information including name, email, encrypted password, and account creation date. In the second table, URLMap, each row stores the short ID and long URL mapping, its creation dates, and who creates the mapping, which is associated with User table using the foreign key. Additionally, to enhance search performance, we build two indexes on the columns, `short_id`, and `long_url`. 
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/DatabaseShema.jpg" width=800/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/DatabaseShema.jpg" width=800/>
 </p>
 
 # Design Details
@@ -81,7 +81,7 @@ To efficiently test whether an ID already exists, BloomFilter is an ideal choice
 In general, the drawback of this approach is that it takes longer to resolve conflicts and generate new and unique IDs as we have stored more and more IDs.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach1.jpg" width="350"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/IdGenerationServiceApproach1.jpg" width="350"/>
 </p>
 
 ### Counter and Ticket Pulling
@@ -90,7 +90,7 @@ The idea of the second approach is to simulate the behavior of a ticket machine.
 Note that we can apply the auto-increment field of the SQL database to implement the counter so that we can maintain atomic transactions for ID pulling requests. The benefit of this approach is that we do not need to resolve ID conflicts, but the downside is that the global counter is our performance bottleneck and may suffer from single-point-of-failure. Besides, if we generate 64-bits integer IDs, the encoded strings will have more than 6 bytes.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach2.jpg" width="800"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/IdGenerationServiceApproach2.jpg" width="800"/>
 </p>
 
 ### Twitter Snowflake ID
@@ -100,14 +100,14 @@ To resolve the bottleneck of the second approach, we borrow the idea from Twitte
 3. The last Z bits represent the local counter. Once an ID generator produces an ID, it should increment the counter and must reset it when the counter overflows or there is an internal server error.
 Like the previous approach, we need to encode the integer IDs using Base62.
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach3.jpg" width="800"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/IdGenerationServiceApproach3.jpg" width="800"/>
 </p>
 
 ### Range Partition
 The idea of Snowflake ID is range partition, meaning each ID generator only produces IDs within a predefined range, for example, timestamp or machine IDs. By extending this idea, we come up with the fourth approach. This time, the service coordinator partitions the value space of the total amount of numeric IDs into multiple ranges. Plus, the ID generators take turns to pull unused ranges from the coordinator. Also, each generator only consumes IDs within the pulled range and should pull another range once the old one runs out. Take our case as an example, we can partition 36.5B into 365K ranges, each of which contains 10M IDs.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/IdGenerationServiceApproach4.jpg" width="750"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/IdGenerationServiceApproach4.jpg" width="750"/>
 </p>
 
 # Scaling Out
@@ -119,7 +119,7 @@ Instead of launching a single database instance to maintain User and URLMap tabl
 The idea of URLMap sharding is that we create the tables with the same schema on multiple database instances, and each instance handles only a subset of the full URL pairs. For example, the first instance handles the pairs containing short IDs with prefix a, while the second instance serves short IDs with prefix b. In real-world applications, there are many ways to determine sharding keys. In our scenario, to serve read requests, we frequently use short IDs to fetch long URLs. Therefore, we apply `short_id` as our sharding key and should further discuss different sharding approaches.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/DatabaseSharding.jpg" width="750"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/DatabaseSharding.jpg" width="750"/>
 </p>
 
 ### Range Based Sharding
@@ -140,7 +140,7 @@ As a baseline approach, we can set up a leader, a follower, and a backup store l
 In this approach, we also need to set up another coordinator, e.g. ZooKeeper, to monitor the health of these machines. When a leader dies, the coordinator should promote the follower to become a new leader. Meanwhile, it should notify us to bring up a new follower, either automatic or manual way, by using the data stored in our backup. 
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/ReplicationBackupFailover.jpg" width="450"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/ReplicationBackupFailover.jpg" width="450"/>
 </p>
 
 
@@ -160,7 +160,7 @@ Following up with the caching mechanism, we should run multiple instances for We
 Put all the details we discuss above, now we have this final draft.
 
 <p align="center">
-  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/SystemDesign/TinyURL/photos/FinalSystemDesign.jpg"/>
+  <img src="https://github.com/ZSShen/Hacking-Tech-Interview/blob/main/TinyURL/photos/FinalSystemDesign.jpg"/>
 </p>
 
 
